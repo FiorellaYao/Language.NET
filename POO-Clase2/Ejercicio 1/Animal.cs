@@ -8,10 +8,14 @@ namespace POO_Clase2.Ejercicio_1
 {
     public class Animal
     {
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
         public int Edad { get; set; }
+        public string? Especie { get; set; }
 
-        public virtual void EmitirSonido() { Console.WriteLine("Sonido generico de animal"); }
+        public virtual string EmitirSonido() 
+        {
+            return "Sonido generico";
+        }
 
     }
 }
