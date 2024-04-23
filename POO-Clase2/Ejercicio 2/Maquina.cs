@@ -11,8 +11,8 @@ namespace POO_Clase2.Ejercicio_2
         public string? Marca { get; set; }
         public int Precio { get; set; }
 
-        public void Encender() { Console.WriteLine("Se encendio la maquina!"); }
-        public void Apagar() { Console.WriteLine("Se apago la maquina!"); }
+        public virtual string Encender() { return "Encendida"; }
+        public virtual string Apagar() { return "Apagada"; }
 
 
     }

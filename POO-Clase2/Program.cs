@@ -12,7 +12,7 @@ namespace POO_Clase2
             // Configurar el metodo Emitir sonido para que cada tipo de animal haga un sonido diferente
             // el metodo emitir sonido no devuelve nada (void), imprimir en consola el "sonido"
 
-            /*Perro perro1 = new() { 
+            Perro perro1 = new() { 
                 //Propiedades: Edad, Nombre, Especie
                 Edad = 2,
                 Nombre = "Marley",
@@ -26,7 +26,7 @@ namespace POO_Clase2
             };
 
             Console.WriteLine($"Me llamo {gato1.Nombre}, soy un {gato1.Especie} y hago {gato1.EmitirSonido()}");
-            Console.WriteLine($"Me llamo {perro1.Nombre}, soy un {perro1.Especie} y hago {perro1.EmitirSonido()}");*/
+            Console.WriteLine($"Me llamo {perro1.Nombre}, soy un {perro1.Especie} y hago {perro1.EmitirSonido()}");
             #endregion
 
             #region Ejercicio 2 
@@ -35,29 +35,31 @@ namespace POO_Clase2
             // Instanciar una notebook y una pcEscritorio
             // Imprimir por pantalla las propiedades de cada uno
 
-            Notebook notebook = new Notebook
+            Notebook notebook = new Notebook()
             {
                 Marca = "Notebook XYZ",
                 Precio = 1000,
                 Peso = 2 // Propiedad específica de Notebook
             };
 
-            PcEscritorio pcEscritorio = new PcEscritorio
+            PcEscritorio pcEscritorio = new PcEscritorio()
             {
                 Marca = "PcEscritorio ABC",
                 Precio = 800,
                 Refactorizada = false // Propiedad específica de PcEscritorio
             };
 
+            Console.WriteLine($"La maquina notebook esta: {notebook.Encender()}");
             Console.WriteLine("Propiedades de la Notebook:");
             Console.WriteLine($"Modelo: {notebook.Marca}");
             Console.WriteLine($"Precio: ${notebook.Precio}");
             Console.WriteLine($"Peso: {notebook.Peso} kg");
+            Console.WriteLine($"La maquina notebook esta: {notebook.Apagar()}");
 
-            Console.WriteLine("\nPropiedades de la PcEscritorio:");
+            Console.WriteLine($"\nLa maquina PcEscritorio esta: {pcEscritorio.Encender()}");
+            Console.WriteLine("Propiedades de la PcEscritorio:");
             Console.WriteLine($"Modelo: {pcEscritorio.Marca}");
             Console.WriteLine($"Precio: ${pcEscritorio.Precio}");
-          
             if (pcEscritorio.Refactorizada)
             {
                 Console.WriteLine($"Refactorizada: La propiedad es verdadera");
@@ -65,7 +67,8 @@ namespace POO_Clase2
             else
             {
                 Console.WriteLine($"Refactorizada: La propiedad es falsa");
-            } 
+            }
+            Console.WriteLine($"La maquina PcEscritorio esta: {pcEscritorio.Apagar()}");
 
             Console.ReadLine();
 
@@ -79,7 +82,7 @@ namespace POO_Clase2
             // Instanciar las clases e imprimir los valores del area y el perimetro para cada figura
             // Mostrar los resultados por consola
 
-            /*Circulo circulo = new() { Radio = 5 };
+            Circulo circulo = new() { Radio = 5 };
 
             // Instanciar un rectángulo
             Rectangulo rectangulo = new () { Base = 4, Altura = 3 };
@@ -94,7 +97,7 @@ namespace POO_Clase2
             Console.WriteLine($"Área: {rectangulo.CalcularArea()}");
             Console.WriteLine($"Perímetro: {rectangulo.CalcularPerimetro()}");
 
-            Console.ReadLine();*/
+            Console.ReadLine();
 
             #endregion
         }
