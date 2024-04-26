@@ -35,7 +35,7 @@ namespace POO_Clase2
             // Instanciar una notebook y una pcEscritorio
             // Imprimir por pantalla las propiedades de cada uno
 
-            Notebook notebook = new Notebook()
+           Notebook notebook = new Notebook()
             {
                 Marca = "Notebook XYZ",
                 Precio = 1000,
@@ -97,7 +97,7 @@ namespace POO_Clase2
             Console.WriteLine($"Área: {rectangulo.CalcularArea()}");
             Console.WriteLine($"Perímetro: {rectangulo.CalcularPerimetro()}");
 
-            Console.ReadLine();
+            Console.ReadKey();
 
             #endregion
         }
