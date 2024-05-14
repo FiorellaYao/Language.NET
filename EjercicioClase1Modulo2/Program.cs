@@ -16,9 +16,9 @@ namespace EjercicioClase1Modulo2
             // Uso: JsonSerializer.Deserialize<ClaseCreada>(data);
 
             // Crear una clase por cada llave del json o pensarlo como una escalera y ver cuantos escalones tiene
-            var pathEjercicio1 = ("C:\\Users\\ayao\\Documents\\Curso CDA .NET (Entregas)\\Clase1_Modulo2\\EjercicioClase1Modulo2\\Ejercicio1.json");
-            var pathEjercicio2 = ("C:\\Users\\ayao\\Documents\\Curso CDA .NET (Entregas)\\Clase1_Modulo2\\EjercicioClase1Modulo2\\Ejercicio2.json");
-            var pathEjercicio3 = ("C:\\Users\\ayao\\Documents\\Curso CDA .NET (Entregas)\\Clase1_Modulo2\\EjercicioClase1Modulo2\\Ejercicio3.json");
+            var pathEjercicio1 = $"{AppDomain.CurrentDomain.BaseDirectory}/Ejercicio1.json";
+            var pathEjercicio2 = $"{AppDomain.CurrentDomain.BaseDirectory}/Ejercicio2.json";
+            var pathEjercicio3 = $"{AppDomain.CurrentDomain.BaseDirectory}/Ejercicio3.json";
 
             var dataEjercicio1 = File.ReadAllText(pathEjercicio1);
             var dataEjercicio2 = File.ReadAllText(pathEjercicio2);
