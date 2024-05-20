@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EjercicioClase2Modulo2
 {
-    internal class Clientes
+    public class Clientes
     {
         public int CodCliente { get; set; }
         public string Nombre { get; set; }

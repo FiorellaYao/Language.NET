@@ -18,30 +18,45 @@
             };
 
 
-            #region Ejercicio1
+            #region Ejercicio1 LINQ
 
             // Detectar cual es el numero mas grande e imprimirlo por consola
 
             var lstNumeros = new List<int>() { 25,10,99,105, 1, 84, 22};
+        
+            var listaNumerosFiltrados = lstNumeros.Max(x => x);
+
+            Console.WriteLine($"El númnero más grande es: {listaNumerosFiltrados}");
 
             #endregion
 
-            #region Ejercicio2
+            #region Ejercicio2 LINQ
 
             //Ordenar los nombres alfabeticamente
             var lstNombres = new List<string>() { "Ana", "Alejandro", "Alexis", "Pablo", "Carlos", "Anibal", "Carla", "Susana" };
 
+            var listaNombresOrdenados = lstNombres.OrderBy(user => user).ToList();
+
+            //ForEach no devuelve nada, solo recorre la lista
+            listaNombresOrdenados.ForEach(user => Console.WriteLine($"Nombres ordenados alfabeticamente: {user}"));
 
             #endregion
 
-            #region Ejercicio3
+            #region Ejercicio3 LINQ
             // Utilizando la variable "lstClientes" filtrar los clientes que tengan vip = true e imprimirlo por consola
+            var listaClientesFiltrados = lstClientes.Where(cliente => cliente.Vip).ToList();
 
+            listaClientesFiltrados.ForEach(cliente => Console.WriteLine($"Estos clientes son VIP: {cliente.Nombre}"));
             #endregion
 
-            #region Ejercicio4 
+            #region Ejercicio4 LINQ
 
             //Utilizando la variable "lstClientes" crear una nueva lista donde solo se encuentren los nombres de los clientes e imprimir los nombres
+            
+            // Seleccionar solo los nombres de los clientes
+            var newListClientes = lstClientes.Select(nameCliente => new NewListClientes {Nombre = nameCliente.Nombre}).ToList();
+
+            newListClientes.ForEach(nameCliente => Console.WriteLine($"Nombres de los clientes: {nameCliente.Nombre}"));
 
             #endregion
 
@@ -50,7 +65,32 @@
             // Nombre tiene que guardarse en mayusculas
             // Apellido tiene que guardarse en mayusculas
             // Vip => se debe evaluar el bool y si es true se debe asignar el texto "Premium" y si es false "Normal"
+
+            // Seleccionar sobre los datos de los clientes el nombre, el apellido y si es Vip
+            var nuevaListaClientes = lstClientes.Select(modificadosClientes => new ModificadosClientes
+            {
+                CodCliente = modificadosClientes.CodCliente,
+                Nombre = modificadosClientes.Nombre.ToUpper(),
+                Apellido = modificadosClientes.Apellido.ToUpper(),
+                Vip = modificadosClientes.Vip ? "Premium" : "Normal"
+            }).ToList();
+
+            nuevaListaClientes.ForEach(modificadoCliente => Console.WriteLine($"Clientes Modificados: {modificadoCliente.CodCliente + " " + modificadoCliente.Nombre + " " + modificadoCliente.Apellido + " " + modificadoCliente.Vip}")); 
             #endregion
         }
+    }
+
+    public class NewListClientes
+    {
+        public string Nombre { get; set; }
+    }
+
+    public class ModificadosClientes
+    {
+        public int CodCliente { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Vip { get; set; }
+
     }
 }
